@@ -31,8 +31,7 @@ void BSTree<DataType,KeyType>:: showStructure () const
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 template < typename DataType, typename KeyType >
-void BSTree<DataType,KeyType>:: showHelper ( BSTreeNode *p,
-                               int level             ) const
+void BSTree<DataType,KeyType>:: showHelper ( BSTreeNode *p, int level) const
 
 // Recursive helper for showStructure. 
 // Outputs the subtree whose root node is pointed to by p. 
