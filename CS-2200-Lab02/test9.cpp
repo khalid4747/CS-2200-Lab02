@@ -9,8 +9,8 @@
 using namespace std;
 
 #include <iostream>
-#include "BSTree.cpp"
 #include "config.h"
+#include "BSTree.h";
 
 void print_help();
 

@@ -127,6 +127,7 @@
     <ClInclude Include="config.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="BSTree.cpp" />
     <ClCompile Include="show9.cpp" />
     <ClCompile Include="test9.cpp" />
   </ItemGroup>

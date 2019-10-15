@@ -1,3 +1,4 @@
+#include "BSTree.h"
 //--------------------------------------------------------------------
 //
 //  Laboratory 9                                         show9.cpp
@@ -26,6 +27,12 @@ void BSTree<DataType,KeyType>:: showStructure () const
        showHelper(root,1);
        cout << endl;
     }
+}
+
+template<typename DataType, class KeyType>
+int BSTree<DataType, KeyType>::getCount() const
+{
+	return 0;
 }
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
