@@ -1,20 +1,14 @@
-﻿  show9.cpp
-C:\Users\Ansam\Desktop\git\CS-2200-Lab02\CS-2200-Lab02\show9.cpp(13,12): error C2988: unrecognizable template declaration/definition
-C:\Users\Ansam\Desktop\git\CS-2200-Lab02\CS-2200-Lab02\show9.cpp(13,12): error C2143: syntax error: missing ';' before '<'
-C:\Users\Ansam\Desktop\git\CS-2200-Lab02\CS-2200-Lab02\show9.cpp(13,1): error C2182: 'BSTree': illegal use of type 'void'
-C:\Users\Ansam\Desktop\git\CS-2200-Lab02\CS-2200-Lab02\show9.cpp(13,12): error C2059: syntax error: '<'
-C:\Users\Ansam\Desktop\git\CS-2200-Lab02\CS-2200-Lab02\show9.cpp(13,33): error C2039: 'showStructure': is not a member of '`global namespace''
-C:\Users\Ansam\Desktop\git\CS-2200-Lab02\CS-2200-Lab02\show9.cpp(20,1): error C2143: syntax error: missing ';' before '{'
-C:\Users\Ansam\Desktop\git\CS-2200-Lab02\CS-2200-Lab02\show9.cpp(20,1): error C2447: '{': missing function header (old-style formal list?)
-C:\Users\Ansam\Desktop\git\CS-2200-Lab02\CS-2200-Lab02\show9.cpp(34,12): error C2988: unrecognizable template declaration/definition
-C:\Users\Ansam\Desktop\git\CS-2200-Lab02\CS-2200-Lab02\show9.cpp(34,12): error C2143: syntax error: missing ';' before '<'
-C:\Users\Ansam\Desktop\git\CS-2200-Lab02\CS-2200-Lab02\show9.cpp(34,12): error C2182: 'BSTree': illegal use of type 'void'
-C:\Users\Ansam\Desktop\git\CS-2200-Lab02\CS-2200-Lab02\show9.cpp(34,6): error C2374: 'BSTree': redefinition; multiple initialization
-C:\Users\Ansam\Desktop\git\CS-2200-Lab02\CS-2200-Lab02\show9.cpp(13): message : see declaration of 'BSTree'
-C:\Users\Ansam\Desktop\git\CS-2200-Lab02\CS-2200-Lab02\show9.cpp(34,12): error C2059: syntax error: '<'
-C:\Users\Ansam\Desktop\git\CS-2200-Lab02\CS-2200-Lab02\show9.cpp(34,33): error C2039: 'showHelper': is not a member of '`global namespace''
-C:\Users\Ansam\Desktop\git\CS-2200-Lab02\CS-2200-Lab02\show9.cpp(40,1): error C2143: syntax error: missing ';' before '{'
+﻿  BSTree.cpp
   test9.cpp
-C:\Users\Ansam\Desktop\git\CS-2200-Lab02\CS-2200-Lab02\show9.cpp(40,1): error C2447: '{': missing function header (old-style formal list?)
   Generating Code...
-C:\Users\Ansam\Desktop\git\CS-2200-Lab02\CS-2200-Lab02\test9.cpp(12,10): fatal error C1083: Cannot open include file: 'BSTree.cpp': No such file or directory
+C:\Users\Ansam\Desktop\git\CS-2200-Lab02\CS-2200-Lab02\test9.cpp(13,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+test9.obj : error LNK2019: unresolved external symbol "public: __thiscall BSTree<class TestData,int>::BSTree<class TestData,int>(void)" (??0?$BSTree@VTestData@@H@@QAE@XZ) referenced in function _main
+test9.obj : error LNK2019: unresolved external symbol "public: __thiscall BSTree<class TestData,int>::~BSTree<class TestData,int>(void)" (??1?$BSTree@VTestData@@H@@QAE@XZ) referenced in function _main
+test9.obj : error LNK2019: unresolved external symbol "public: void __thiscall BSTree<class TestData,int>::insert(class TestData const &)" (?insert@?$BSTree@VTestData@@H@@QAEXABVTestData@@@Z) referenced in function _main
+test9.obj : error LNK2019: unresolved external symbol "public: bool __thiscall BSTree<class TestData,int>::retrieve(int const &,class TestData &)const " (?retrieve@?$BSTree@VTestData@@H@@QBE_NABHAAVTestData@@@Z) referenced in function _main
+test9.obj : error LNK2019: unresolved external symbol "public: bool __thiscall BSTree<class TestData,int>::remove(int const &)" (?remove@?$BSTree@VTestData@@H@@QAE_NABH@Z) referenced in function _main
+test9.obj : error LNK2019: unresolved external symbol "public: void __thiscall BSTree<class TestData,int>::writeKeys(void)const " (?writeKeys@?$BSTree@VTestData@@H@@QBEXXZ) referenced in function _main
+test9.obj : error LNK2019: unresolved external symbol "public: void __thiscall BSTree<class TestData,int>::clear(void)" (?clear@?$BSTree@VTestData@@H@@QAEXXZ) referenced in function _main
+test9.obj : error LNK2019: unresolved external symbol "public: bool __thiscall BSTree<class TestData,int>::isEmpty(void)const " (?isEmpty@?$BSTree@VTestData@@H@@QBE_NXZ) referenced in function _main
+test9.obj : error LNK2019: unresolved external symbol "public: void __thiscall BSTree<class TestData,int>::showStructure(void)const " (?showStructure@?$BSTree@VTestData@@H@@QBEXXZ) referenced in function _main
+C:\Users\Ansam\Desktop\git\CS-2200-Lab02\Debug\CS-2200-Lab02.exe : fatal error LNK1120: 9 unresolved externals

@@ -1,4 +1,4 @@
-	//--------------------------------------------------------------------
+//--------------------------------------------------------------------
 //
 //  Laboratory 9                                         test9.cpp
 //
@@ -10,7 +10,7 @@ using namespace std;
 
 #include <iostream>
 #include "config.h"
-#include "BSTree.h";
+#include "BSTree.h"
 
 void print_help();
 
@@ -18,25 +18,10 @@ void print_help();
 // Declaration for the binary search tree data item class
 //--------------------------------------------------------------------
 
-class TestData
-{
-  public:
-
-    void setKey ( int newKey )
-        { keyField = newKey; }   // Set the key
-
-    int getKey () const
-        { return keyField; }     // Returns the key
-
-  private:
-
-    int keyField;                // Key for the data item
-};
-
 int main()
 {
-    BSTree<TestData,int> testTree;   // Test binary search tree
-    TestData testData;               // Binary search tree data item
+	BSTree<TestData, int> testTree;   // Test binary search tree
+	TestData testData;               // Binary search tree data item
     int inputKey;                    // User input key
     char cmd;                        // Input command
 
@@ -170,4 +155,3 @@ void print_help() {
     cout << "  Q    : Quit the test program" << endl;
     cout << endl;
 }
-
