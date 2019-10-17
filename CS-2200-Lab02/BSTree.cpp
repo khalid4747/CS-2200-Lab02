@@ -5,88 +5,6 @@
 
 using namespace std;
 
-//template<typename DataType, class KeyType>
-//inline BSTree<DataType, KeyType>::BSTree()
-//{
-//
-//}
-
-template<typename DataType, class KeyType>
-BSTree<DataType, KeyType>::BSTree() {
-	
-}
-
-template<typename DataType, class KeyType>
-BSTree<DataType, KeyType>::BSTree(const BSTree<DataType, KeyType>& other) {
-	root->left = nullptr;
-	root->right = nullptr;
-}
-
-template<typename DataType, class KeyType>
-BSTree& BSTree<DataType, KeyType>::operator=(const BSTree<DataType, KeyType>& other)
-{
-	// TODO: insert return statement heres
-}
-
-template<typename DataType, class KeyType>
-BSTree<DataType, KeyType>::~BSTree()
-{
-}
-
-template<typename DataType, class KeyType>
-void BSTree<DataType, KeyType>::insert(const DataType& newDataItem)
-{
-}
-
-template<typename DataType, class KeyType>
-bool BSTree<DataType, KeyType>::retrieve(const KeyType& searchKey, DataType& searchDataItem) const
-{
-	return false;
-}
-
-template<typename DataType, class KeyType>
-bool BSTree<DataType, KeyType>::remove(const KeyType& deleteKey)
-{
-	return false;
-}
-
-template<typename DataType, class KeyType>
-void BSTree<DataType, KeyType>::writeKeys() const
-{
-}
-
-template<typename DataType, class KeyType>
-void BSTree<DataType, KeyType>::clear()
-{
-}
-
-template<typename DataType, class KeyType>
-bool BSTree<DataType, KeyType>::isEmpty() const
-{
-	return false;
-}
-
-template<typename DataType, class KeyType>
-int BSTree<DataType, KeyType>::getHeight() const
-{
-	return false;
-}
-
-template<typename DataType, class KeyType>
-int BSTree<DataType, KeyType>::getCount() const
-{
-	
-	return 0;
-}
-
-template<typename DataType, class KeyType>
-void print() {
-
-}
-
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //Implementations for the tree diagram
 #include "BSTree.h"
 
@@ -250,10 +168,6 @@ BSTree<DataType, KeyType>::BSTreeNode::BSTreeNode(const DataType& nodeDataItem, 
 	dataItem.setKey(nodeDataItem.getKey());
 }
 
-
-
-
-
 //Pre order traversal, creating a tree from scratch
 template<typename DataType, class KeyType>
 void BSTree<DataType, KeyType>::copyHelper(BSTreeNode* node)
@@ -270,7 +184,7 @@ void BSTree<DataType, KeyType>::copyHelper(BSTreeNode* node)
 
 //Post order traversal
 template<typename DataType, class KeyType>
-void BSTree::deleteHelper(BSTreeNode* node)
+void BSTree<DataType, KeyType>::deleteHelper(BSTreeNode* node)
 {
 	if (node == NULL)
 		return;
@@ -287,7 +201,7 @@ void BSTree::deleteHelper(BSTreeNode* node)
 
 //In order traversal to print all nodes
 template<typename DataType, class KeyType>
-void BSTree::printHelper(BSTreeNode* node) const
+void BSTree<DataType, KeyType>::printHelper(BSTreeNode* node) const
 {
 	if (node == NULL)
 		return;
@@ -303,7 +217,7 @@ void BSTree::printHelper(BSTreeNode* node) const
 }
 
 template<typename DataType, class KeyType>
-void BSTree::removeHelper(BSTreeNode*& root, int deleteKey) const
+void BSTree<DataType, KeyType>::removeHelper(BSTreeNode*& root, KeyType deleteKey) const
 {
 	BSTreeNode* temp = root;
 	int min = 0;

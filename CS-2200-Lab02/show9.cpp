@@ -29,11 +29,6 @@ void BSTree<DataType,KeyType>:: showStructure () const
     }
 }
 
-template<typename DataType, class KeyType>
-int BSTree<DataType, KeyType>::getCount() const
-{
-	return 0;
-}
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 

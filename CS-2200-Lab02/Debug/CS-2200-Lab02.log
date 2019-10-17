@@ -1,7 +1,4 @@
-﻿  BSTree.cpp
-  test9.cpp
-  Generating Code...
-C:\Users\Ansam\Desktop\git\CS-2200-Lab02\CS-2200-Lab02\test9.cpp(13,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+﻿  test9.cpp
 test9.obj : error LNK2019: unresolved external symbol "public: __thiscall BSTree<class TestData,int>::BSTree<class TestData,int>(void)" (??0?$BSTree@VTestData@@H@@QAE@XZ) referenced in function _main
 test9.obj : error LNK2019: unresolved external symbol "public: __thiscall BSTree<class TestData,int>::~BSTree<class TestData,int>(void)" (??1?$BSTree@VTestData@@H@@QAE@XZ) referenced in function _main
 test9.obj : error LNK2019: unresolved external symbol "public: void __thiscall BSTree<class TestData,int>::insert(class TestData const &)" (?insert@?$BSTree@VTestData@@H@@QAEXABVTestData@@@Z) referenced in function _main

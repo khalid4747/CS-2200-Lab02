@@ -12,6 +12,9 @@ using namespace std;
 #include "config.h"
 #include "BSTree.h"
 
+#include "BSTree.cpp"
+#include "show9.cpp"
+
 void print_help();
 
 //--------------------------------------------------------------------
