@@ -124,8 +124,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="BSTree.cpp" />
+    <ClCompile Include="database.cpp" />
     <ClCompile Include="show9.cpp" />
-    <ClCompile Include="test9.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BSTree.h" />

@@ -1,12 +1,11 @@
-#pragma once
+//Implementations for the tree diagram
+
 #include <stdexcept>
 #include <iostream>
+#include <algorithm>    // std::max
 #include "BSTree.h"
 
 using namespace std;
-
-//Implementations for the tree diagram
-#include "BSTree.h"
 
 //Initial blank tree
 template<typename DataType, class KeyType>
@@ -80,7 +79,6 @@ void BSTree<DataType, KeyType>::insert(const DataType& newDataItem)
 			}
 		}
 	}
-
 }
 
 template<typename DataType, class KeyType>
@@ -89,7 +87,7 @@ bool BSTree<DataType, KeyType>::retrieve(const KeyType& searchKey, DataType& sea
 	BSTreeNode* temp = root;
 	while (temp != nullptr) {
 		if (searchKey == temp->dataItem.getKey()) {
-			searchDataItem.setKey(searchKey);
+			searchDataItem.setKey(temp->dataItem.getRecNum(), searchKey);
 			return true;
 		}
 		else {
@@ -114,7 +112,7 @@ bool BSTree<DataType, KeyType>::retrieve(const KeyType& searchKey, DataType& sea
 template<typename DataType, class KeyType>
 bool BSTree<DataType, KeyType>::remove(const KeyType& deleteKey)
 {
-	TestData temp;
+	DataType temp;
 	//First search key if in node
 	if (retrieve(deleteKey, temp)) {
 		removeHelper(root, deleteKey);
@@ -148,16 +146,17 @@ bool BSTree<DataType, KeyType>::isEmpty() const
 template<typename DataType, class KeyType>
 int BSTree<DataType, KeyType>::getHeight() const
 {
-	return 0;
+	return getHeightHelper(this->root);
 }
 
 //Exercise #2
+//A cleaner interface for getCount using recursion
 template<typename DataType, class KeyType>
 int BSTree<DataType, KeyType>::getCount() const
 {
-	int right = 1, left = 0;
-
-	return right > left ? right : left;
+	int sum = 0;
+	getCountHelper(this->root, sum);
+	return sum;
 }
 
 template<typename DataType, class KeyType>
@@ -165,17 +164,17 @@ BSTree<DataType, KeyType>::BSTreeNode::BSTreeNode(const DataType& nodeDataItem, 
 {
 	left = leftPtr;
 	right = rightPtr;
-	dataItem.setKey(nodeDataItem.getKey());
+	dataItem.setKey(nodeDataItem.getRecNum(), nodeDataItem.getKey());
 }
 
 //Pre order traversal, creating a tree from scratch
 template<typename DataType, class KeyType>
 void BSTree<DataType, KeyType>::copyHelper(BSTreeNode* node)
 {
-	TestData temp;
+	DataType temp;
 	if (node != nullptr)
 	{
-		temp.setKey(node->dataItem.getKey());
+		temp.setKey(node->dataItem.getRecNum(), node->dataItem.getKey());
 		insert(temp);
 		copyHelper(node->left);
 		copyHelper(node->right);
@@ -254,8 +253,33 @@ void BSTree<DataType, KeyType>::removeHelper(BSTreeNode*& root, KeyType deleteKe
 				temp = temp->left;
 			}
 			min = temp->dataItem.getKey();
-			root->dataItem.setKey(min);
+			root->dataItem.setKey(temp->dataItem.getRecNum(), min);
 			removeHelper(root->right, min);
 		}
 	}
+}
+
+template<typename DataType, class KeyType>
+int BSTree<DataType, KeyType>::getHeightHelper(BSTreeNode * node) const
+{
+	if (node == NULL)
+		return 0;
+	else {
+		max(getHeightHelper(node->left), getHeightHelper(node->right)) + 1;
+	}
+}
+
+template<typename DataType, class KeyType>
+int BSTree<DataType, KeyType>::getCountHelper(BSTreeNode* node, int &sum) const {
+	if (node == NULL)
+		return 0;
+
+	//Call all left childs
+	getCountHelper(node->left, sum);
+
+	//Now modify right nodes
+	getCountHelper(node->right, sum);
+
+	//Current all left nodes modifty current node
+	return sum++;
 }
