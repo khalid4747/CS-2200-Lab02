@@ -21,7 +21,7 @@
     <ClCompile Include="BSTree.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="database.cpp">
+    <ClCompile Include="test9.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

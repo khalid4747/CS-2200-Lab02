@@ -1,11 +1,2 @@
-﻿  database.cpp
-C:\Users\Ansam\Desktop\git\CS-2200-Lab02\CS-2200-Lab02\database.cpp(90,7): warning C4101: 'recNum': unreferenced local variable
-C:\Users\Ansam\Desktop\git\CS-2200-Lab02\CS-2200-Lab02\BSTree.cpp(268,66): warning C4552: '+': result of expression not used
-C:\Users\Ansam\Desktop\git\CS-2200-Lab02\CS-2200-Lab02\BSTree.cpp(264): message : while compiling class template member function 'int BSTree<IndexEntry,int>::getHeightHelper(BSTree<IndexEntry,int>::BSTreeNode *) const'
-C:\Users\Ansam\Desktop\git\CS-2200-Lab02\CS-2200-Lab02\BSTree.cpp(149): message : see reference to function template instantiation 'int BSTree<IndexEntry,int>::getHeightHelper(BSTree<IndexEntry,int>::BSTreeNode *) const' being compiled
-C:\Users\Ansam\Desktop\git\CS-2200-Lab02\CS-2200-Lab02\BSTree.cpp(12): message : while compiling class template member function 'BSTree<IndexEntry,int>::BSTree(void)'
-C:\Users\Ansam\Desktop\git\CS-2200-Lab02\CS-2200-Lab02\database.cpp(85): message : see reference to function template instantiation 'BSTree<IndexEntry,int>::BSTree(void)' being compiled
-C:\Users\Ansam\Desktop\git\CS-2200-Lab02\CS-2200-Lab02\database.cpp(85): message : see reference to class template instantiation 'BSTree<IndexEntry,int>' being compiled
-C:\Users\Ansam\Desktop\git\CS-2200-Lab02\CS-2200-Lab02\BSTree.cpp(109): warning C4715: 'BSTree<IndexEntry,int>::retrieve': not all control paths return a value
-C:\Users\Ansam\Desktop\git\CS-2200-Lab02\CS-2200-Lab02\BSTree.cpp(270): warning C4715: 'BSTree<IndexEntry,int>::getHeightHelper': not all control paths return a value
+﻿  BSTree.cpp
   CS-2200-Lab02.vcxproj -> C:\Users\Ansam\Desktop\git\CS-2200-Lab02\x64\Debug\CS-2200-Lab02.exe

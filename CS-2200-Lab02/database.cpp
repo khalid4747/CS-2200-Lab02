@@ -1,20 +1,15 @@
 //--------------------------------------------------------------------
-//
-//  Laboratory 11, In-lab Exercise 1                     database.cs
-//
-//  (Shell) Indexed accounts database program
-//
+//  Laboratory 9                                         database.cpp
+/*!-------------------------------------------------------------------
+	\file 
+    \brief Testing database functionality 
+
+	Builds a binary search tree index for the account records in the
+	text file accounts.dat
+*/
 //--------------------------------------------------------------------
 
-// Builds a binary search tree index for the account records in the
-// text file accounts.dat.
-
 using namespace std;
-
-#include <iostream>
-#include <fstream>
-#include <vector>
-#include <string>
 
 #include "config.h"
 #include "BSTree.h"
@@ -30,15 +25,40 @@ void print_help();
 //
 //--------------------------------------------------------------------
 
-//Data that gets stored into the array
+///Data that gets stored into the array
+/*! 
+		Where the user data is stored.
+		
+		Each node has an a unique key which is the acctID and a 
+		recNum which is how each individual is stored into the 
+		array for the database.
+		
+*/
 struct AccountRecord
 {
-	int acctID;                   // Account identifier
-	string firstName,		      // Name of account holder
+	/// Account identifier
+	int acctID;
+	/// First name of the account holder
+	string firstName,	
+	/// Last name of the account holder
 		lastName;
-	double balance;               // Account balance
+	/// Account balance
+	double balance;
 
+	///Default constructor
 	AccountRecord() {}
+	
+	/// Constructor for AccountRecord 
+	/*! 
+		Reads from accounts.dat to assign each individual
+		person the correct information. Then it stored into 
+		an array with a corresponding reference number.
+		
+		@param acctID : Passed in reference number
+		@param first : Passed in first name 
+		@param last : Passed in last name
+		@param bal : Passed in balance for their account
+	*/ 
 	AccountRecord(int acctID, string first, string last, double bal) {
 		this->acctID = acctID;
 		this->firstName = first;
@@ -53,22 +73,39 @@ struct AccountRecord
 //
 //--------------------------------------------------------------------
 
-//Nodes of the binary search tree
+/// Nodes of binary search tree for the database
+/*! 
+		This class is used as the indecies to the database.
+		
+		Each node has an a unique key which is the acctID and a 
+		recNum which is how each individual is stored into the 
+		array for the database.
+		
+*/ 
 struct IndexEntry
 {
-	int acctID;              // (Key) Account identifier
-	long recNum;             // Record number
+	/// (Key) Account identifier
+	int acctID;  
+	/// Record number used to access the array.
+	long recNum;             
 
+	/// Sets the variables of the node
+	/*! 
+		@param recNum : Passed in reference number
+		@param acctID : Passed in unique key
+	*/ 
 	void setKey(long recNum, int acctID) {
 		this->acctID = acctID;
 		this->recNum = recNum;
 	} // Set the initial data
 
+	///Return unique key acctID
 	int getKey() const
 	{
 		return acctID;
 	}   // Return key field
 
+	///Return record number
 	int getRecNum() const
 	{
 		return recNum;

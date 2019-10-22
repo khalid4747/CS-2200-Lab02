@@ -1,9 +1,30 @@
 //--------------------------------------------------------------------
-//
 //  Laboratory 9                                         test9.cpp
-//
-//  Test program for the operations in the Binary Search Tree ADT
-//
+/*!-------------------------------------------------------------------
+	\file 
+    \brief Testing binary search tree structure
+
+	Test program for the operations in the Binary Search Tree ADT.
+	
+	Sees whether the structure is working correctly and is able 
+	to :
+	
+		Add a node,
+	
+		Search for a node given a key,
+	
+		Remove a node,
+	
+		Print keys in ascending order,
+	
+		Clear the tree,
+	
+		Test if the tree is empty,
+	
+		See how many nodes are in the tree,
+	
+		Get the height of the binary tree.
+*/
 //--------------------------------------------------------------------
 
 using namespace std;
@@ -21,29 +42,44 @@ void print_help();
 // Declaration for the binary search tree data item class
 //--------------------------------------------------------------------
 
+
 static int counter = 0;
 
+/// Nodes of binary search tree to test
+/*! 
+		This class is only used to test the functionality
+		of binary search tree and has no database attached to it.
+*/ 
 class TestData
 {
 public:
+	/// Sets the variables of the node
+	/*! 
+		@param recNum : Passed in reference number
+		@param acctID : Passed in unique key
+	*/ 
 	void setKey(long recNum, int acctID) {
 		this->keyField = acctID;
 		this->recNum = recNum;
 	}	  // Set the initial data
 
+	///Return recNum
 	int getRecNum() const
 	{
 		return recNum;
 	}   // Return key field
 
+	///Return keyField
 	int getKey() const
 	{
 		return keyField;
 	}     // Returns the key
 
 private:
-
-	int keyField;  // Key for the data item
+	
+	/// The unique key to that specific node
+	int keyField;
+	/// Used for the database to refrence an array
 	int recNum;
 };
 

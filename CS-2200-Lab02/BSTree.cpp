@@ -1,13 +1,23 @@
-//Implementations for the tree diagram
+//--------------------------------------------------------------------
+// Laboratory 9    										BSTree.cpp
+/*!-------------------------------------------------------------------
+	\file 
+    \brief Implementations for the tree diagram
 
-#include <stdexcept>
-#include <iostream>
-#include <algorithm>    // std::max
+	Creates the individual implementations from BSTree.h.
+	
+	Since we are using a template to build our binary search tree,
+	we have to make sure that we manually include all implementations
+	files since c++ does not do that automatically. This is different 
+	from normal classes because c++ does that by itself.
+*/
+//--------------------------------------------------------------------
+
 #include "BSTree.h"
 
 using namespace std;
 
-//Initial blank tree
+///Initial blank tree
 template<typename DataType, class KeyType>
 BSTree<DataType, KeyType>::BSTree() {
 	this->root = nullptr;
@@ -36,13 +46,15 @@ const BSTree<DataType, KeyType>& BSTree<DataType, KeyType>::operator=(const BSTr
 	return *this;
 }
 
+//Destructor for the bstree
 template<typename DataType, class KeyType>
 BSTree<DataType, KeyType>::~BSTree()
 {
 	deleteHelper(this->root);
-	root = nullptr;
+	delete root;
 }
 
+//Insert a node
 template<typename DataType, class KeyType>
 void BSTree<DataType, KeyType>::insert(const DataType& newDataItem)
 {
@@ -81,6 +93,7 @@ void BSTree<DataType, KeyType>::insert(const DataType& newDataItem)
 	}
 }
 
+//Retrieve a node 
 template<typename DataType, class KeyType>
 bool BSTree<DataType, KeyType>::retrieve(const KeyType& searchKey, DataType& searchDataItem) const
 {
@@ -106,6 +119,7 @@ bool BSTree<DataType, KeyType>::retrieve(const KeyType& searchKey, DataType& sea
 					temp = temp->left;
 		}
 	}
+	return false;
 }
 
 //Deleting a node
@@ -143,6 +157,7 @@ bool BSTree<DataType, KeyType>::isEmpty() const
 }
 
 //Exercise #2
+//Getting the height
 template<typename DataType, class KeyType>
 int BSTree<DataType, KeyType>::getHeight() const
 {
@@ -202,7 +217,7 @@ void BSTree<DataType, KeyType>::deleteHelper(BSTreeNode* node)
 template<typename DataType, class KeyType>
 void BSTree<DataType, KeyType>::printHelper(BSTreeNode* node) const
 {
-	if (node == NULL)
+	if (node == nullptr)
 		return;
 
 	//Call all left childs
@@ -262,7 +277,7 @@ void BSTree<DataType, KeyType>::removeHelper(BSTreeNode*& root, KeyType deleteKe
 template<typename DataType, class KeyType>
 int BSTree<DataType, KeyType>::getHeightHelper(BSTreeNode * node) const
 {
-	if (node == NULL)
+	if (node == nullptr)
 		return 0;
 	else {
 		max(getHeightHelper(node->left), getHeightHelper(node->right)) + 1;
@@ -271,7 +286,7 @@ int BSTree<DataType, KeyType>::getHeightHelper(BSTreeNode * node) const
 
 template<typename DataType, class KeyType>
 int BSTree<DataType, KeyType>::getCountHelper(BSTreeNode* node, int &sum) const {
-	if (node == NULL)
+	if (node == nullptr)
 		return 0;
 
 	//Call all left childs

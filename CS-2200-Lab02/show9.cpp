@@ -1,14 +1,15 @@
-#include "BSTree.h"
 //--------------------------------------------------------------------
-//
-//  Laboratory 9                                         show9.cpp
-//
-//  Linked implementation of the showStructure operation for the
-//  Binary Search Tree ADT
-//
+// Laboratory 9    										show9.cpp
+/*!-------------------------------------------------------------------
+	\file 
+    \brief Printing the structure 
+
+	Linked implementation of the showStructure operation for the
+    Binary Search Tree ADT
+*/
 //--------------------------------------------------------------------
 
-//--------------------------------------------------------------------
+#include "BSTree.h"
 
 template < typename DataType, typename KeyType >
 void BSTree<DataType, KeyType>::showStructure() const
